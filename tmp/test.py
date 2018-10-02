@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import time
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
@@ -20,7 +20,7 @@ def load_data(data_dir, train_row):
     return x_train, y_train, pred_test
     
 data_dir = "./"
-train_row = -1 # -1 means train all data, otherwise train specific number of rows
+train_row = 5000 # -1 means train all data, otherwise train specific number of rows
 k_range = range(1, 21)
 scores = []
 
@@ -53,13 +53,13 @@ k_highest = scores.index(score_max) + 1
 print("total accuracy scores: %s" % scores)
 print("highest accuracy: k = %s, accuracy = %s\n" % (k_highest, score_max))
 
-"""
+
 plt.plot(k_range, scores)
 plt.xlabel("Value of K")
 plt.ylabel("Accuracy")
 plt.show()
-"""
 
+"""
 start = time.time()
 knn = KNeighborsClassifier(n_neighbors = k_highest)
 knn.fit(origin_x_train, origin_y_train)
@@ -71,3 +71,4 @@ print("complete time: %s second(s)\n" % str(end - start))
 
 pd.DataFrame({"ImageId": list(range(1,len(y_test_pred)+1)),"Label": y_test_pred}).to_csv('Digit_Recogniser_Result.csv', index=False,header=True)
 print("Digit_Recogniser_Result.csv is generated.")
+"""

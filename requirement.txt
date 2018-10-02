@@ -4,7 +4,7 @@ cycler==0.10.0
 frida==12.2.6
 frida-tools==1.2.2
 kiwisolver==1.0.1
-matplotlib==2.2.3
+matplotlib==3.0.0
 numpy==1.15.2
 pandas==0.23.4
 prompt-toolkit==1.0.15
