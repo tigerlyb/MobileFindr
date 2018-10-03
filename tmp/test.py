@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import time
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
@@ -53,12 +53,12 @@ k_highest = scores.index(score_max) + 1
 print("total accuracy scores: %s" % scores)
 print("highest accuracy: k = %s, accuracy = %s\n" % (k_highest, score_max))
 
-
+"""
 plt.plot(k_range, scores)
 plt.xlabel("Value of K")
 plt.ylabel("Accuracy")
 plt.show()
-
+"""
 """
 start = time.time()
 knn = KNeighborsClassifier(n_neighbors = k_highest)
