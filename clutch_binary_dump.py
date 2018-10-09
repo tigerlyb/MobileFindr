@@ -1,7 +1,3 @@
-'''
-Author: Jiakuan Li
-'''
-
 import mmap, subprocess
 
 global configuration
